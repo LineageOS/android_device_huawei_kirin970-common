@@ -14,26 +14,21 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "odm-init"
-
 #include <android-base/file.h>
 #include <android-base/logging.h>
-#include <android-base/properties.h>
 #include <android-base/strings.h>
-#include <algorithm>
-#include <cstring>
 #include <fstream>
 #include <map>
-#include <vector>
+#include <property_service.h>
 
 constexpr auto CMDLINE_PATH = "/proc/cmdline";
 constexpr auto CMDLINE_PRODUCT_ID = "productid";
 constexpr auto PHONE_PROP_PATH = "/odm/phone.prop";
 
 using android::base::ReadFileToString;
-using android::base::SetProperty;
 using android::base::Split;
 using android::base::Trim;
+using android::init::property_set;
 
 using PropertyPair = std::pair<std::string, std::string>;
 using PropertiesVector = std::vector<PropertyPair>;
@@ -94,28 +89,26 @@ bool GetPropertiesFromPhoneProp(std::map<std::string, PropertiesVector>& out) {
     return true;
 }
 
-int main() {
+void vendor_load_properties() {
     std::string productId;
 
     if (!GetProductId(productId)) {
-        return -1;
+        return;
     }
 
     std::map<std::string, PropertiesVector> properties;
 
     if (!GetPropertiesFromPhoneProp(properties)) {
-        return -1;
+        return;
     }
 
     auto it = properties.find(productId);
 
     if (it != properties.end()) {
         for (const auto& prop : properties.at(productId)) {
-            if (!SetProperty(prop.first, prop.second)) {
+            if (!property_set(prop.first.c_str(), prop.second.c_str())) {
                 LOG(ERROR) << "Unable to set property " << prop.first << " to " << prop.second;
             }
         }
     }
-
-    return 0;
 }
