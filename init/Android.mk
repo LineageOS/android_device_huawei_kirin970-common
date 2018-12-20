@@ -18,11 +18,13 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := odm-init.cpp
+LOCAL_SRC_FILES := init_kirin970.cpp
 
-LOCAL_MODULE := odm-init
+LOCAL_C_INCLUDES := system/core/init
+
+LOCAL_MODULE := libinit_kirin970
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SHARED_LIBRARIES := libbase
+LOCAL_STATIC_LIBRARIES := libbase
 
-include $(BUILD_EXECUTABLE)
+include $(BUILD_STATIC_LIBRARY)

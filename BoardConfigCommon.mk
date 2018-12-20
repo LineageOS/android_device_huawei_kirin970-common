@@ -66,6 +66,10 @@ TARGET_BOARD_INFO_FILE := $(VENDOR_PATH)/board-info.txt
 # Display
 TARGET_USES_HWC2 := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_kirin970
+TARGET_RECOVERY_DEVICE_MODULES := libinit_kirin970
+
 # Lineage hardware
 JAVA_SOURCE_OVERLAYS := \
     org.lineageos.hardware|$(VENDOR_PATH)/lineagehw|**/*.java
