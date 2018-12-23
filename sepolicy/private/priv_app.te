@@ -1,0 +1,6 @@
+# Allow binder communication with hal_camera_server
+binder_call(priv_app, hal_camera_server)
+binder_call(hal_camera_server, priv_app)
+
+# Allow priv_app to find default_hisi_hwservice
+allow priv_app default_hisi_hwservice:hwservice_manager find;
