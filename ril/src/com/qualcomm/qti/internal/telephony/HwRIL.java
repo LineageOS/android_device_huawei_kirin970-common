@@ -17,9 +17,9 @@
 package com.qualcomm.qti.internal.telephony;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.hardware.radio.V1_0.RadioResponseInfo;
 import android.os.Message;
+import android.os.PersistableBundle;
 import android.os.Registrant;
 import android.os.SystemProperties;
 import android.telephony.CarrierConfigManager;
@@ -154,6 +154,16 @@ public class HwRIL extends RIL {
 
         int[] threshRsrp = CarrierConfigManager.getDefaultConfig().getIntArray(
                 CarrierConfigManager.KEY_LTE_RSRP_THRESHOLDS_INT_ARRAY);
+
+        CarrierConfigManager ccm = (CarrierConfigManager)
+                ril.mContext.getSystemService(Context.CARRIER_CONFIG_SERVICE);
+        if (ccm != null) {
+            PersistableBundle cc = ccm.getConfigForSubId(subId);
+            if (cc != null) {
+                threshRsrp = cc.getIntArray(
+                        CarrierConfigManager.KEY_LTE_RSRP_THRESHOLDS_INT_ARRAY);
+            }
+        }
 
         if (sSignalCust != null && threshRsrp.length == 4) {
             switch (radioTech) {
