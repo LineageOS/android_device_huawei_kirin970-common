@@ -1,0 +1,17 @@
+type shal_lineage_touch_default, coredomain,domain;
+hal_server_domain(shal_lineage_touch_default, hal_lineage_touch)
+
+type shal_lineage_touch_default_exec, exec_type, file_type;
+init_daemon_domain(shal_lineage_touch_default)
+
+# Allow binder communication with hal_fingerprint
+binder_call(shal_lineage_touch_default, hal_fingerprint)
+
+# Allow shal_lineage_touch_default to find hal_ext_fingerprint_hwservice
+allow shal_lineage_touch_default hal_ext_fingerprint_hwservice:hwservice_manager find;
+
+# Allow shal_lineage_touch_default to read sysfs_fingerprint
+allow shal_lineage_touch_default sysfs_fingerprint:file r_file_perms;
+
+# Allow shal_lineage_touch_default to write to sysfs_touchscreen
+allow shal_lineage_touch_default sysfs_touchscreen:file w_file_perms;
