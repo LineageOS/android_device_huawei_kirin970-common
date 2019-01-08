@@ -39,8 +39,9 @@
 /version(/.*)?         u:object_r:system_file:s0
 
 # Binaries
-/system/bin/bfm-ctl                u:object_r:bfm-ctl_exec:s0
-/system/bin/displayengineserver    u:object_r:displayengineserver_exec:s0
+/system/bin/bfm-ctl                                            u:object_r:bfm-ctl_exec:s0
+/system/bin/displayengineserver                                u:object_r:displayengineserver_exec:s0
+/system/bin/hw/vendor\.lineage\.touch@1.0-service\.kirin970    u:object_r:shal_lineage_touch_default_exec:s0
 
 # Configs
 /system/etc/audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0

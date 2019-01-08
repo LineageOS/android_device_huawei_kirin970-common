@@ -1,0 +1,4 @@
+vendor.lineage.touch::IGloveMode             u:object_r:shal_lineage_touch_hwservice:s0
+vendor.lineage.touch::IKeyDisabler           u:object_r:shal_lineage_touch_hwservice:s0
+vendor.lineage.touch::IStylusMode            u:object_r:shal_lineage_touch_hwservice:s0
+vendor.lineage.touch::ITouchscreenGesture    u:object_r:shal_lineage_touch_hwservice:s0

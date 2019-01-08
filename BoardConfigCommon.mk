@@ -66,6 +66,9 @@ TARGET_BOARD_INFO_FILE := $(VENDOR_PATH)/board-info.txt
 # Display
 TARGET_USES_HWC2 := true
 
+# HIDL
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_kirin970
 TARGET_RECOVERY_DEVICE_MODULES := libinit_kirin970
