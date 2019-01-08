@@ -1,0 +1,5 @@
+# Allow binder communication with shal_lineage_touch_default
+binder_call(system_app, shal_lineage_touch_default)
+
+# Allow system_app to find shal_lineage_touch_hwservice
+allow system_app shal_lineage_touch_hwservice:hwservice_manager find;

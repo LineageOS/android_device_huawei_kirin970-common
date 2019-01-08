@@ -1,0 +1,20 @@
+type shal_lineage_touch_default, coredomain, domain;
+hwbinder_use(shal_lineage_touch_default)
+
+type shal_lineage_touch_default_exec, exec_type, file_type;
+init_daemon_domain(shal_lineage_touch_default)
+
+# Allow binder communication with hal_fingerprint
+binder_call(shal_lineage_touch_default, hal_fingerprint)
+
+# Allow shal_lineage_touch_default to find hal_ext_fingerprint_hwservice
+allow shal_lineage_touch_default hal_ext_fingerprint_hwservice:hwservice_manager find;
+
+# Allow shal_lineage_touch_default to write to sysfs_touchscreen
+allow shal_lineage_touch_default sysfs_touchscreen:file w_file_perms;
+
+# Check if hwservicemanager is ready
+get_prop(shal_lineage_touch_default, hwservicemanager_prop)
+
+# Add vendor.lineage.touch::* services to hwservicemanager
+add_hwservice(shal_lineage_touch_default, shal_lineage_touch_hwservice)

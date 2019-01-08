@@ -48,6 +48,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fingerprint.kl:system/usr/keylayout/fingerprint.kl
 
+# LineageHw
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.kirin970
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
