@@ -80,3 +80,7 @@ PRODUCT_PACKAGES += \
 # Shims
 PRODUCT_PACKAGES += \
     libshims_hwsmartdisplay_jni
+
+# Trust HAL
+PRODUCT_PACKAGES += \
+    lineage.trust@1.0-service
