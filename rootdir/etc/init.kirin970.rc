@@ -4,10 +4,14 @@ on init
     symlink /dev/block/platform/${ro.boot.boot_devices} /dev/block/bootdevice
 
 on fs
-    mount ext4 /dev/block/by-name/cust_a /cust wait ro
-    mount ext4 /dev/block/by-name/preload_a /preload wait ro
-    mount ext4 /dev/block/by-name/product_a /product wait ro
-    mount ext4 /dev/block/by-name/version_a /version wait ro
+    mount ext4 /dev/block/by-name/cust /cust wait ro
+    mount ext4 /dev/block/by-name/cust${ro.boot.slot_suffix} /cust wait ro
+    mount ext4 /dev/block/by-name/preload /preload wait ro
+    mount ext4 /dev/block/by-name/preload${ro.boot.slot_suffix} /preload wait ro
+    mount ext4 /dev/block/by-name/product /product wait ro
+    mount ext4 /dev/block/by-name/product${ro.boot.slot_suffix} /product wait ro
+    mount ext4 /dev/block/by-name/version /version wait ro
+    mount ext4 /dev/block/by-name/version${ro.boot.slot_suffix} /version wait ro
     mount none /odm/hw_odm/${ro.boot.product.hardware.sku} /hw_odm bind
     mount none /product/lost+found /product/app bind
     mount none /vendor/lost+found /vendor/etc/audio bind
