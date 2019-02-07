@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e73e1b1_cc861846",
+        "filename": "rootdir/etc/fstab.kirin970",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2019-02-07T23:07:12Z",
+      "side": 1,
+      "message": "change that to /dev/null :^)",
+      "range": {
+        "startLine": 5,
+        "startChar": 1,
+        "endLine": 5,
+        "endChar": 37
+      },
+      "revId": "c16d56bf080b5f6105e6e761115d94c17d3cbe3f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
