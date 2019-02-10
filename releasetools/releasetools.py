@@ -32,3 +32,5 @@ def AddVendorAssertion(info, input_zip):
     if m:
         cmd = 'assert(huawei.verify_vendor_build_id("' + m.group(1).rstrip() + '") == "1");'
         info.script.AppendExtra(cmd)
+
+    info.script.AssertOemProperty("ro.boot.slot_suffix", ["_a"], True)
