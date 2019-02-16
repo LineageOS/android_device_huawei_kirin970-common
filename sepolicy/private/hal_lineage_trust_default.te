@@ -1,7 +1,7 @@
-type shal_lineage_trust_default, domain;
+type shal_lineage_trust_default, coredomain, domain;
 hal_server_domain(shal_lineage_trust_default, hal_lineage_trust)
 
-type shal_lineage_trust_default_exec, exec_type, file_type;
+type shal_lineage_trust_default_exec, exec_type, file_type, vendor_executes_system_violators;
 init_daemon_domain(shal_lineage_trust_default)
 
 # Talk to the binder device node
