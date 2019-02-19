@@ -1919,25 +1919,9 @@ etc/charger/public/800_serial/scp_charging_22.png
 etc/charger/public/800_serial/scp_charging_23.png
 -sbin/charger:sbin/chargeonlymode;rootfs|124a478904a2bd08e2a1e6c4a1bdc4ab124743d4
 
-# Display engine
-bin/displayengineserver
-etc/init/displayengineserver.rc
-lib64/libc_secshared.so 
-lib64/libdisplayengineservice.so
-lib64/libhuaweicust.so 
-lib64/vendor.huawei.hardware.graphics.displayeffect@1.0.so
-lib64/vendor.huawei.hardware.graphics.displayeffect@1.1.so
-lib64/vendor.huawei.hardware.graphics.displayeffect@1.2.so
-lib64/vendor.huawei.hardware.hwdisplay.displayengine@1.0.so
-lib64/vendor.huawei.hardware.hwdisplay.displayengine@1.1.so
-
 # HotwordEnrollment
 -priv-app/HotwordEnrollmentOKGoogleHI6403/HotwordEnrollmentOKGoogleHI6403.apk;PRESIGNED|8faf6d751b0f258678cb6ad9b5dff332483fbf82
 -priv-app/HotwordEnrollmentXGoogleHI6403/HotwordEnrollmentXGoogleHI6403.apk;PRESIGNED|7e8376ad34941bd68194540d1977e36b1e1b6d74
 
 # Radio
 emui/base/global/ons.bin:ons.bin
-
-# SmartDisplay
-lib/libhwsmartdisplay_jni.so
-lib64/libhwsmartdisplay_jni.so
