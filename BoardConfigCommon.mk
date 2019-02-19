@@ -73,10 +73,6 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml
 TARGET_INIT_VENDOR_LIB := libinit_kirin970
 TARGET_RECOVERY_DEVICE_MODULES := libinit_kirin970
 
-# Lineage hardware
-JAVA_SOURCE_OVERLAYS := \
-    org.lineageos.hardware|$(VENDOR_PATH)/lineagehw|**/*.java
-
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
@@ -111,8 +107,3 @@ BOARD_ROOT_EXTRA_FOLDERS := \
 # SELinux
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/public
-
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /system/lib64/libdisplayengineservice.so|libshims_hwsmartdisplay_jni.so \
-    /system/lib64/libhwsmartdisplay_jni.so|libshims_hwsmartdisplay_jni.so

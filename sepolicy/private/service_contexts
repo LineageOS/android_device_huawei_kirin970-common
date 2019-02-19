@@ -1,2 +1,1 @@
-DisplayEngineService    u:object_r:display_engine_service:s0
 extphone                u:object_r:radio_service:s0
