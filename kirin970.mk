@@ -64,7 +64,9 @@ PRODUCT_COPY_FILES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml \
-    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+    device/huawei/kirin970-common/permissions/privapp-permissions_berkeley.xml:system/etc/permissions/privapp-permissions_berkeley.xml
+
 
 # Radio
 PRODUCT_PACKAGES += \
